@@ -35,7 +35,7 @@ class ProfileController extends Controller
         if (auth()->id() != 1) {
             $userID = auth()->id();
         }
-        $data = ['name' => $request->input('name'), 'email' => $request->input('email'), 'password' =>
+        $data = ['name' => $request->input('name'), /*'email' => $request->input('email'),*/ 'password' =>
             $request->input('password'), 'active' => $request->has('active')];
 
         User::where('id', '=', $userID)->update($data);
