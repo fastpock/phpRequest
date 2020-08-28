@@ -27,7 +27,7 @@ class UsersController extends Controller
         if (auth()->id() !== 1) {
             abort(404);
         }
-        $users = User::all();
+        $users = User::paginate(15);
         return view('users', ['users' => $users]);
     }
 }

@@ -23,7 +23,7 @@
                                 @foreach($users as $user)
                                     <tr>
 
-                                        <th scope="row">{{ $user['id'] }}</th>
+                                        <td scope="row">{{ $user['id'] }}</td>
                                         <td>{{ $user['name'] }}</td>
                                         <td>{{ $user['email'] }}</td>
                                         <td>{{ $user['active'] }}</td>
@@ -31,7 +31,13 @@
                                         ('edit') }}</a></td>
                                     </tr>
                                 @endforeach
+                                <tr>
+                                    <td colspan="4">
+                                        {{ $users->render() }}
+                                    </td>
+                                </tr>
                             @else
+
                                 <tr>
                                     <td>No users</td>
                                 </tr>
